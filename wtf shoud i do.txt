@@ -1,0 +1,56 @@
+najprv si to píš len tak, potom naskladaj do classu
+lol, alebo to jebni všetko do jedného classu gabriela xD
+
+- tile - štvorček
+    • plocha rozdelená čiarami alebo určitý počet štvorčekov naukladaných vedľa seba?
+    • veľkosť? 20 x 20 px?      OK
+    • výplň čierna, hranice biele (1px)
+
+- označenie mín:
+    • vytvoriť si pole s mínami - všetky pozície sú 0, kde je mína bude mína bude M
+        -> vyberiem x-ovú a y-ovú súradnicu náhodne, POZOR, musím kontrolovať, či som danú kombináciu súradníc už nezvolila (môže sa to stať): pamätať si (x,y) v list of tuples
+
+- koľko mín je okolo daného políčka (nie je to cyklické)    DONE
+    • okrajové políčka musím riešiť zvlášť - nemusím, stačí si napísať funkciu na kontrolovani toho, či je políčko vnútri
+    • každému políško priradím číslo
+
+- vytvoriť surfaces:
+    • pre čísla DONE
+    • pre prázdne políčka
+    • pre nestlačené políčka - čierne DONE
+    • pre míny DONE
+    • pre vlajočky DONE
+
+- MOUSECLICK
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dopičeeeeeeeeeeeeeeeeeeeeeeee
+    • keď kliknem mimo  okna nespraví nič   DONE
+    • keď kliknem niekam, odokryje sa štvorček na ktroý som klikla
+        -> zisťiť súradnice (pygame.mouse.get_pos())    DONE
+        -> zitiť, akému štvorcu korespondujú súradnice  DONE
+        -> ak kliknem akurát na čiaru, nedeje sa nič ALEBO ľavá hranica štvorca je ešte štvorec - EHH, CCA :D
+    • ak sa klikne pravým tlačítkom, na štvorček sa nakreslí vlajočka       DONE
+    • ak sa klikne ľavým tlačítkom:
+        - ak tam má byť číslo rôzne od nuly, vykreslí sa číslo      DONE 
+        - ak tam je 0
+            -> step1: odokryjem ako prázdne políčko (sivá)  DONE
+            -> step2: odokryjem do každého smeru, kým nenarazím na číslo rôzne od 0 ALEBO spravím verziu hry, v ktorej budú aj nulové políčka :D
+        - ak tam je mína ("M")
+            -> step1: odokryjem mínu        DONE 
+            -> step2: odokryjem všetky míny     DONE
+            -> step3: odokryjem všetky míny a vyhodím okienko GAME OVER (-> obdĺžnik s textom)      DONE
+            -> step4: odokryjem všetky míny, vyhodím okienko GAME OVER a zablokujem ďalšie pokračovanie vo hre
+    • pri každom skontrolovať, či nenastala výhra (všetky míny sú označené vlajočkou "F")
+- RESTART: pri stlačení spaceu      DONE
+
+- HINT:
+    • prechádzam self.AItiles, ak [i][j] == False: self.is_safe_to_click(i,j)
+        -> ak mi pri niektorom vráti True, vykreslím dané políčko nažlto, neprezerám ďalej
+        -> ak prejdem všetky políčka a nenarazím na True, vypíšem "no safe tile" na hornú lištu (pod give hints)
+    ehh, something like that :D 
+    • spravím aj verziu, ktorá bude hovoriť kde je mína? nieee, potom by človek čo to hrá nemusel rozmýšlať, a chcem predsa aby ľudia prehrávali heheee
+- BUGS:
+    • prečo mení všetkyy?       OK, lebo python je weird
+    • ak raz vypíšem číslo, viem ho prepísať na vlajočku, a keď zruším vlajočku, tak sa to rozbije      OK
+    • na ľavom a pravom okraji nezisťuje susedov            OK
+    • pri RMB na ovlajočkavané políčko narastá počet vlajočiek      OK
+    • prečo nejdú hinty kurvaaaaaaaaaaa     OK
