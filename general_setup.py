@@ -55,6 +55,8 @@ class InMem():
             for j in range(self.cols):
                 if self.tiles[i][j] != "M":
                     self.tiles[i][j] = self.get_around(i,j)
+        # for row in self.tiles:
+            # print(row)
 
     def draw_colored_tile (self, x, y, color):
         """draws tile of given color on given position"""
@@ -242,7 +244,10 @@ class InMem():
             # LMB
             elif event.button == 1:
                 self.search(i,j)
-        pygame.display.update()   
+        pygame.display.update()
+        # print("----------")
+        # for row in self.tiles:
+        #     print(row) 
     
     def lost(self):
         "draws game over on bar"
