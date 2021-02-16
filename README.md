@@ -6,20 +6,20 @@ Verzia hry Minesweeper (míny) s AI schopnou dávať rady o štvorčekoch, ktor�
 Na spustenie hry je potrebné spustiť súbor *main.py*, spúšťa sa level _easy_.
 
 ### Ovládanie hry:
-#### RMB
-Kliknutím pravým tlačítkom myši na prázdne (čierne) políčko sa naň vyznačí vlajka,kliknuím na políčko s vlajkou sa vlajka vymaže.
-Pri kliknutí na ľubovolné iné políčko sa nebude diať nič.
-#### LMB
-Kliknutím ľavým tlačítkom myši na prázdne políčko sa dané políčko odokryje. Viac o význame odokrytých políčok [tu](https://github.com/GabiZavod/Zapoctak-ZS1BC#v%C3%BDznam-pol%C3%AD%C4%8Dok).
-Kliknutím na iné políčko (odokryté alebo označené vlajočkou) sa nič nestane. Pri kiknutí na tlačítko `GIVE HINT` sa vyžiada rada od AI. Viac o jej fungovaní [tu](https://github.com/GabiZavod/Zapoctak-ZS1BC#hinty-rady).
-#### SPACE
-Stlačením medzerníku sa spustí nová hra, úroveň sa zachová.
-#### Kláves E
-Stlačením klávesu E sa nastaví úroveň hry na *easy*.
-#### Kláves M
-Stlačením klávesu M sa nastaví úroveň hry na *medium*.
-#### Kláves H
-Stlačením klávesu H sa nastaví úroveň hry na *hard*.
+- RMB
+  * Kliknutím pravým tlačítkom myši na prázdne (čierne) políčko sa naň vyznačí vlajka,kliknuím na políčko s vlajkou sa vlajka vymaže.
+  * Pri kliknutí na ľubovolné iné políčko sa nebude diať nič.
+- LMB
+  * Kliknutím ľavým tlačítkom myši na prázdne políčko sa dané políčko odokryje. Viac o význame odokrytých políčok [tu](https://github.com/GabiZavod/Zapoctak-ZS1BC#v%C3%BDznam-pol%C3%AD%C4%8Dok).
+  * Kliknutím na iné políčko (odokryté alebo označené vlajočkou) sa nič nestane. Pri kiknutí na tlačítko `GIVE HINT` sa vyžiada rada od AI. Viac o jej fungovaní [tu](https://github.com/GabiZavod/Zapoctak-ZS1BC#hinty-rady).
+- SPACE
+  * Stlačením medzerníku sa spustí nová hra, úroveň sa zachová.
+- Kláves E
+  * Stlačením klávesu E sa nastaví úroveň hry na *easy*.
+- Kláves M
+  * Stlačením klávesu M sa nastaví úroveň hry na *medium*.
+- Kláves H
+  * Stlačením klávesu H sa nastaví úroveň hry na *hard*.
 ##### Poznámka:
 Úroveň hry je možné meniť len keď hráč danú hru vyhrá alebo prehrá, počas rozohratej hry nie je možné meniť úroveň. Novú hru vrámci tej istej úrovni je možné spustiť hocikedy.
 
