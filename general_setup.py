@@ -4,22 +4,22 @@ import random
 
 class InMem():
     def __init__(self, rows, cols, num_mines):
-        self.rows = rows
-        self.cols = cols
-        self.num_mines = num_mines
-        self.num_flags = 0
-        self.tiles = [[0 for x in range(cols)] for y in range(rows)]
-        self.AItiles = [["NV" for x in range(cols)]  for y in range(rows)]
-        self.mines = []
+        self.rows = rows                                                                    #number of rows
+        self.cols = cols                                                                    #number of columns
+        self.num_mines = num_mines                                                          #number of mines
+        self.num_flags = 0                                                                  #number of flags set (varies when a flag is placed or removed)
+        self.tiles = [[0 for x in range(cols)] for y in range(rows)]                        #state of the game represented in the memory of the program
+        self.AItiles = [["NV" for x in range(cols)]  for y in range(rows)]                  #state of the game from the point of view of the player (equivalently, the AI)
+        self.mines = []                                                                     #list of mines, gets set when mines are generated
         self.screen_width = 20*self.cols + self.cols + 1
-        self.screen_height = 20*self.rows + self.rows + 41
-        self.clock = pygame.time.Clock()
-        self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))   
-        self.caption = pygame.display.set_caption("Minesweeper") 
-        self.logo = pygame.image.load("logo.png")
-        self.running = True
+        self.screen_height = 20*self.rows + self.rows + 41                                  #parameters of the window
+        self.clock = pygame.time.Clock()                                                    #clock (did not work without it)
+        self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))      #game window   
+        self.caption = pygame.display.set_caption("Minesweeper")                            #caption of game window 
+        self.logo = pygame.image.load("logo.png")                                           #logo of game window (i drew it)
+        self.running = True 
         self.win = False
-        self.lose = False
+        self.lose = False                                                                   # states of game - ongoing, winning state or losing state
 
     def set_mines(self):       
         """sets mines on random positions"""
