@@ -2,9 +2,6 @@ import pygame
 import sys
 import random
 
-
-        
-
 class InMem():
     def __init__(self, rows, cols, num_mines):
         self.rows = rows
@@ -97,11 +94,11 @@ class InMem():
         first_line = "MINES: " + str(self.num_mines) + "    FLAGS: " + str(self.num_flags) + "   "
         font = pygame.font.SysFont("ebrima.ttf", 16)
         line = font.render(first_line, True, (0,0,0), (255,255,255))
-        self.screen.blit(line, (5,18))
+        self.screen.blit(line, (5,18))                                          # vypíše počet mín a aktuálne vyznačených vlajočiek
         give = font.render("GIVE", True, (0,0,0), (255,235,0))
         hint = font.render("HINT", True, (0,0,0), (255,235,0))
         self.screen.blit(give, (self.screen_width-35, 10))
-        self.screen.blit(hint, (self.screen_width-35, 21))
+        self.screen.blit(hint, (self.screen_width-35, 21))                      # vypíšet "tlačítko" GIVE HINT
         pygame.display.update()
    
     def initialize(self):
@@ -139,11 +136,11 @@ class InMem():
         """action on leftclick on a tile"""
         x = j*21 +1
         y = i*21 +41
-        if not self.ingrid(i,j):
+        if not self.ingrid(i,j):                                #if the tile is outside of the grid, returns
             return
-        if self.tiles[i][j] == "V":
+        if self.tiles[i][j] == "V":                             #if the tile is already vivsible, returns
             return
-        if self.tiles[i][j] == "M":         #mine
+        if self.tiles[i][j] == "M":                             #if the clicked tile is a mine, shows all mines and goes into a lose state       
             self.draw_mine(x,y)
             for i in range(self.rows):
                 for j in range(self.cols):
@@ -152,36 +149,36 @@ class InMem():
             self.lose = True
             self.running = False
             return
-        if self.tiles[i][j] == 0:
-            self.draw_colored_tile(x,y,(96,96,96))
-            self.AItiles[i][j] = self.tiles[i][j]
-            self.tiles[i][j] = "V"
+        if self.tiles[i][j] == 0:                                                               #if the tile is a zero, draws grey tile,
+            self.draw_colored_tile(x,y,(96,96,96))                                              #sets the tile to visible, recursively calls the search function
+            self.AItiles[i][j] = self.tiles[i][j]                                               #on all of its neighbours
+            self.tiles[i][j] = "V"                                                              #and passes on the information aboout the tile to AI
             for (a,b) in [(0,1), (0,-1), (1,0), (-1,0), (1,1), (1,-1), (-1,1), (-1,-1)]:
                 self.search(a+i, b+j)
-        if type(self.tiles[i][j]) == int and self.tiles[i][j] > 0 and self.tiles[i][j] < 9:
-            self.draw_tile_withnum(x,y,self.tiles[i][j])
-            self.AItiles[i][j] = self.tiles[i][j]
-            self.tiles[i][j] = "V"          #visible
+        if type(self.tiles[i][j]) == int and self.tiles[i][j] > 0 and self.tiles[i][j] < 9:     #if the tile is a number between 0 and 9,
+            self.draw_tile_withnum(x,y,self.tiles[i][j])                                        #draws a numberd tile with a corresponding number
+            self.AItiles[i][j] = self.tiles[i][j]                                               #and sets the tie to visible
+            self.tiles[i][j] = "V"                                                              #and passes on the information aboout the tile to AI
             return
     
     def right_button(self,i,j):
         """action on rightclick on a tile"""
         x = j*21 +1
         y = i*21 +41
-        if self.tiles[i][j] == "F":             #unflag
-            self.draw_colored_tile(x,y,(0,0,0))       #x,y
+        if self.tiles[i][j] == "F":                              #unflag
+            self.draw_colored_tile(x,y,(0,0,0))       
             self.AItiles[i][j] = "NV"
             self.num_flags -= 1
             if (i,j) in self.mines:
                 self.tiles[i][j] = "M"          
-            else:
+            else:                                              
                 self.tiles[i][j] = self.get_around(i,j)
             self.draw_firstline()
         else:                                   #place flag
-            if self.AItiles[i][j] != "NV":
+            if self.AItiles[i][j] != "NV":            #can't place flag on a visible tile
                 pass
             else:
-                self.draw_flag(x,y)                #(a//21) * 21 +1,(b//21) * 21 -1
+                self.draw_flag(x,y)               
                 self.tiles[i][j] = "F"
                 self.AItiles[i][j] = "F"
                 self.num_flags += 1
@@ -239,10 +236,10 @@ class InMem():
         else:
             i = (b -41)//21
             j = a //21
-            # clicking with right button
+            # RMB
             if event.button == 3:
                 self.right_button(i,j)
-            # clicking with left button
+            # LMB
             elif event.button == 1:
                 self.search(i,j)
         pygame.display.update()   
@@ -292,7 +289,7 @@ class InMem():
                     if event.key == pygame.key.key_code("e") and not self.running:
                         self.set_level(8,10,10)
                     if event.key == pygame.key.key_code("m") and not self.running:
-                        self.set_level(10,14,25)
+                        self.set_level(14,18,40)
                     if event.key == pygame.key.key_code("h") and not self.running:
                         self.set_level(20,24,99)
             if self.win: self.won()
