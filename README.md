@@ -44,4 +44,26 @@ Prehra nastane v prípade, že hráč klikne na políčko s mínou, túto situá
 Hráč si kliknutím na tlačítko `GIVE HINT` môže vyžiadať radu od AI, ktorá pracuje len s viditeľnými informáciami (odokrytými políčkami a políčkami označenými vlajočkou) a na základe nich nafarbí na žlto políčko, ktoré nebude obsahovať mínu a hráč naňho môže kliknúť (LMB). Samozrejme, ak hráč niekde spravil chybu, môže po kliknutí na vyznačené políčko naraziť na mínu - to ale nie je chyba programu, ale hráča. Ak AI na základe viditeľných informácií nenájde políčko, na ktoré je bezpečné kliknúť, pod talčítkom `GIVE HINT` sa objaví informácia "No hints". Potom by mal hráč porozmýšlať, či nie je na ploche políčko, ktoré môže označiť ako mínu, alebo musí kliknutie (LMB) na ďalšie políčko voliť náhodne.
 
 ## Popis programu
+Program je písaný v jazyku Python, využíva knižnice pygame a random. 
 
+Použité dátové štruktúry:
+* 2D pole: použité pre uloženie stavu hry - ako pre program (self.tiles), tak pre hintovú AI (self.AItiles)
+* pole (list): použité pre uloženi políčok s mínami (self.mines)
+Všetky funkcie sú uložené v triede InMem(), takže by som vlastne ani tú triedu nepotrebovala (neviem používať triedy), a každá z nich má v kóde popísané čo robí. Zároveň tiež obsahuje viac rôznych atribútov, ktoré majú tiež v komentári popísané, čo je ich úlohou, respektíve akú informáciu obsahujú.
+
+## Testovanie:
+Na overenie správnosti programu slúžia riadky (58,59) a (248,249,250) súboru general_setup.py, ktoré sú v základnom stave zakomentované, po odkomentovaní budú na stdout vypisovať stav hracej plochy, vo forme v akej ich má uložený program. Na základe toho je možné kontrolovať, či daná akcia prevedie to čo previesť má.
+#### Upresnenie:
+To, čo tieto príkazy vypíšu je 2D pole obsahujúce "stav hry", ale nie z pohľadu hráča, ale pamäte programu.
+* 'M' znamená, že na danej pozícii je mína, po kliknutí na políčko odpovedajúce súradniciam tohto prvku zoznamu by sa na hracej ploche mala vykresliť mína a nastať prehrávajúca situácia.
+* Číslica značí počet mín na okolitých políčkach (v poli sa dá skontrolovať, či je táto hodnota správna). Po kliknutí na políčko odpovedajúce súradniciam tohto prvku by sa malo na hraciu plochu vykresliť políčko s touto číslicou. Jedinou výnimkou je 0, ak sa klikne na políčko s nulou, budú sa vykreslovať sivé políčka, kým sa nenarazí na políčka s číslicami (každá mína je ohraničená číslicami rôznymi od 0, resp. okrajom hracej plochy).
+* 'V' znamená, že dané políčka sú už vykreslené na hracej ploche (visible).
+* 'F' znamená, že dané políčka sú označené vlajočkou. Po odznačení (zrušenie vlajočky) sa nastaví hodnota, ktorá tam bola predtým ('M' ak bola mína, číslica, ak bola číslica)
+#### Poznámka
+Testovanie programu mi zabezpečil otec a sestra, ktorý ma informovali o prípadných bugoch.
+
+## Čo sa nespravilo?
+AI na hinty mohla mať pôvodne aj schopnosť určovať políčka, kde určite leží mína, rozhodla som sa to však vynechať, lebo potom by bola hra príliš ľahká.
+
+## Myšlienky a pocity
+Pôvodne som nechcela robiť hru, lebo mi to príde ako cudzia téma, ale nakoniec ma písať míny celkom bavilo, asi preto, lebo som to ako malá hrávala keď nešiel internet (a prestal ma baviť t-rex). Môj myšlienkový pochod je zaznamenaný [tu](https://github.com/GabiZavod/Zapoctak-ZS1BC/blob/main/wtf%20shoud%20i%20do.txt) - LANGUAGE WARNING
