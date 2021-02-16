@@ -289,7 +289,7 @@ class InMem():
                     if event.key == pygame.key.key_code("e") and not self.running:
                         self.set_level(8,10,10)
                     if event.key == pygame.key.key_code("m") and not self.running:
-                        self.set_level(10,14,25)
+                        self.set_level(14,18,40)
                     if event.key == pygame.key.key_code("h") and not self.running:
                         self.set_level(20,24,99)
             if self.win: self.won()
