@@ -9,8 +9,8 @@ Na spustenie hry je potrebné spustiť súbor *main.py*, spúšťa sa level _eas
 Kliknutím pravým tlačítkom myši na prázdne (čierne) políčko sa naň vyznačí vlajka,kliknuím na políčko s vlajkou sa vlajka vymaže.
 Pri kliknutí na ľubovolné iné políčko sa nebude diať nič.
 #### LMB
-Kliknutím ľavým tlačítkom myši na prázdne políčko sa dané políčko odokryje. Viac o význame odokrytých políčok tu. \*zisti ako sa dáva link vrámci toho istého md
-Kliknutím na iné políčko (odokryté alebo označené vlajočkou) sa nič nestane. Pri kiknutí na tlačítko "GIVE HINT" sa vyžiada rada od AI. Viac o jej fungovaní tu. \*zisti ako sa dáva link vrámci toho istého md
+Kliknutím ľavým tlačítkom myši na prázdne políčko sa dané políčko odokryje. Viac o význame odokrytých políčok [tu]. \*zisti ako sa dáva link vrámci toho istého md
+Kliknutím na iné políčko (odokryté alebo označené vlajočkou) sa nič nestane. Pri kiknutí na tlačítko "GIVE HINT" sa vyžiada rada od AI. Viac o jej fungovaní [tu](https://github.com/GabiZavod/Zapoctak-ZS1BC#hinty-rady). \*zisti ako sa dáva link vrámci toho istého md
 #### SPACE
 Stlačením medzerníku sa spustí nová hra, úroveň sa zachová.
 #### Kláves E
@@ -34,6 +34,8 @@ V úrovni easy sa na hracej ploche veľkosti 8 x 10 (riadky x stĺpce) nachádza
 V úrovni medium sa na hracej ploche veľkosti 14 x 18 (riadky x stĺpce) nachádza 40 mín, čiže zaokrúhlene 15,87% políčok tvoria míny.
 ##### Hard
 V úrovni hard sa na hracej ploche veľkosti 20 x 24 (riadky x stĺpce) nachádza 99 mín, čiže 20,625% políčok tvoria míny.
+#### Význam políčok
+
 
 ### Hinty (rady):
 
