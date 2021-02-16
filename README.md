@@ -9,8 +9,8 @@ Na spustenie hry je potrebné spustiť súbor *main.py*, spúšťa sa level _eas
 Kliknutím pravým tlačítkom myši na prázdne (čierne) políčko sa naň vyznačí vlajka,kliknuím na políčko s vlajkou sa vlajka vymaže.
 Pri kliknutí na ľubovolné iné políčko sa nebude diať nič.
 #### LMB
-Kliknutím ľavým tlačítkom myši na prázdne políčko sa dané políčko odokryje. Viac o význame odokrytých políčok tu. \*zisti ako sa dáva link vrámci toho istého md
-Kliknutím na iné políčko (odokryté alebo označené vlajočkou) sa nič nestane. Pri kiknutí na tlačítko "GIVE HINT" sa vyžiada rada od AI. Viac o jej fungovaní tu. \*zisti ako sa dáva link vrámci toho istého md
+Kliknutím ľavým tlačítkom myši na prázdne políčko sa dané políčko odokryje. Viac o význame odokrytých políčok [tu](). 
+Kliknutím na iné políčko (odokryté alebo označené vlajočkou) sa nič nestane. Pri kiknutí na tlačítko "GIVE HINT" sa vyžiada rada od AI. Viac o jej fungovaní [tu] (https://github.com/GabiZavod/Zapoctak-ZS1BC#hinty-rady). \*zisti ako sa dáva link vrámci toho istého md
 #### SPACE
 Stlačením medzerníku sa spustí nová hra, úroveň sa zachová.
 #### Kláves E
